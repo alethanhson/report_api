@@ -32,4 +32,9 @@ export class UserController {
   getProfile(@Request() req) {
     return req.user;
   }
+
+  @Post('/signup')
+  async signUp(@Request() req) {
+    return this.userService.signUp(req);
+  }
 }
