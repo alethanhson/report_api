@@ -7,6 +7,7 @@ import { AuthGuard } from './users/auth/auth.guard';
 import { APP_GUARD } from '@nestjs/core';
 import { ScheduleModule } from '@nestjs/schedule';
 import { IndeedScraperService } from './schedule/services/schedule.service'; // Import your service
+import { NestCrawlerModule } from 'nest-crawler';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { IndeedScraperService } from './schedule/services/schedule.service'; // 
       synchronize: true,
     }),
     ScheduleModule.forRoot(),
+    NestCrawlerModule,
   ],
   controllers: [AppController],
   providers: [
